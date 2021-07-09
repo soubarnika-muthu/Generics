@@ -6,36 +6,31 @@ using System.Threading.Tasks;
 
 namespace FindMaximumGenerics
 {
+    //generic class that extends IComparable interface
     public class FindMaximum<T> where T : IComparable
     {
-        public T firstVal, secondVal, thirdVal;
+        public T[] array;
 
-        public FindMaximum(T first, T second, T third)
+        public FindMaximum(T[] array)
         {
-            this.firstVal = first;
-            this.secondVal = second;
-            this.thirdVal = third;
+            this.array = array;
         }
 
-        public static T FindMax(T firstVal, T secondVal, T thirdVal)
+        public T[] SortArray(T[] values)
         {
-            if (firstVal.CompareTo(secondVal) > 0 && firstVal.CompareTo(thirdVal) > 0)
-            {
-                return firstVal;
-            }
-            else if (secondVal.CompareTo(firstVal) > 0 && secondVal.CompareTo(thirdVal) > 0)
-            {
-                return secondVal;
-            }
-            else
-            {
-                return thirdVal;
-            }
+            Array.Sort(values);
+            return values;
+        }
+
+        public T FindMaxElement(T[] value)
+        {
+            T[] sortedValues = SortArray(value);
+            return sortedValues[sortedValues.Length - 1];
         }
 
         public T MaxMethod()
         {
-            T max = FindMaximum<T>.FindMax(this.firstVal, this.secondVal, this.thirdVal);
+            T max = FindMaxElement(this.array);
             return max;
         }
     }
