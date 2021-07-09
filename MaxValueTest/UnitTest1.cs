@@ -8,11 +8,11 @@ namespace MaxValueTest
     [TestClass]
     public class UnitTest1
     {
-        FindMaxInt findMaxInt;
+        FindMaximum findMax;
 
         public UnitTest1()
         {
-            findMaxInt = new FindMaxInt();
+            findMax = new FindMaximum();
         }
 
         [TestMethod]
@@ -21,7 +21,7 @@ namespace MaxValueTest
             int first = 80;
             int second = 56;
             int third = 21;
-            int actual = findMaxInt.FindMax(first, second, third);
+            int actual = findMax.FindMaxInt(first, second, third);
             int expected = first;
             // expected.CompareTo(actual);
             Assert.AreEqual(expected, actual);
@@ -32,7 +32,7 @@ namespace MaxValueTest
             int first = 70;
             int second = 90;
             int third = 21;
-            int actual = findMaxInt.FindMax(first, second, third);
+            int actual = findMax.FindMaxInt(first, second, third);
             int expected = second;
             expected.CompareTo(actual);
         }
@@ -42,8 +42,38 @@ namespace MaxValueTest
             int first = 80;
             int second = 56;
             int third = 100;
-            int actual = findMaxInt.FindMax(first, second, third);
+            int actual = findMax.FindMaxInt(first, second, third);
             int expected = third;
+            expected.CompareTo(actual);
+        }
+        [TestMethod]
+        public void TestMethodFloat1()
+        {
+            double first = 11.3;
+            double second = 5.6;
+            double third = 2.1;
+            double actual = findMax.FindMax(first, second, third);
+            double expected = first;
+            expected.CompareTo(actual);
+        }
+        [TestMethod]
+        public void TestMethodFloat2()
+        {
+            double first = 8.0;
+            double second = 53.6;
+            double third = 2.1;
+            double actual = findMax.FindMax(first, second, third);
+            double expected = first;
+            expected.CompareTo(actual);
+        }
+        [TestMethod]
+        public void TestMethodFloat3()
+        {
+            double first = 8.0;
+            double second = 5.6;
+            double third = 12.1;
+            double actual = findMax.FindMax(first, second, third);
+            double expected = first;
             expected.CompareTo(actual);
         }
     }
