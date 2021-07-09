@@ -10,7 +10,7 @@ namespace FindMaximumGenerics
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Finding maximum of three numbers using Generic and  using test cases ");
+            Console.WriteLine("Finding maximum of three numbers using Generic class and  using test cases ");
            
             
              
