@@ -27,10 +27,15 @@ namespace FindMaximumGenerics
             T[] sortedValues = SortArray(value);
             return sortedValues[sortedValues.Length - 1];
         }
+        public void PrintMax(T value)
+        {
+            Console.WriteLine("The maximum element is :" + value);
+        }
 
         public T MaxMethod()
         {
             T max = FindMaxElement(this.array);
+            PrintMax(max);
             return max;
         }
     }
